@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lê Đức Anh | Portfolio</title>
+    <meta name="description" content="Portfolio of Lê Đức Anh, Junior DevOps & AI Engineer">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons (Lucide via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neon: {
+                            green: '#39ff14',
+                            blue: '#00f3ff'
+                        },
+                        dark: {
+                            900: '#050505',
+                            800: '#0f0f0f',
+                            700: '#1a1a1a',
+                            border: '#333333'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-dark-900 text-gray-300 font-sans antialiased selection:bg-neon-blue selection:text-dark-900 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-dark-border transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home"
+                        class="text-neon-blue font-mono text-xl font-bold tracking-tighter hover:text-neon-green transition-colors duration-300">
+                        ~/le-duc-anh
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8 font-mono text-sm">
+                        <a href="#home"
+                            class="hover:text-neon-blue transition-colors duration-300 px-3 py-2 rounded-md">_home</a>
+                        <a href="#skills"
+                            class="hover:text-neon-blue transition-colors duration-300 px-3 py-2 rounded-md">_skills</a>
+                        <a href="#projects"
+                            class="hover:text-neon-blue transition-colors duration-300 px-3 py-2 rounded-md">_projects</a>
+                        <a href="#experience"
+                            class="hover:text-neon-blue transition-colors duration-300 px-3 py-2 rounded-md">_experience</a>
+                        <a href="#contact"
+                            class="hover:text-neon-blue transition-colors duration-300 px-3 py-2 rounded-md">_contact</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-nav border-b border-dark-border">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-mono text-sm">
+                <a href="#home" class="block hover:text-neon-blue px-3 py-2 rounded-md">_home</a>
+                <a href="#skills" class="block hover:text-neon-blue px-3 py-2 rounded-md">_skills</a>
+                <a href="#projects" class="block hover:text-neon-blue px-3 py-2 rounded-md">_projects</a>
+                <a href="#experience" class="block hover:text-neon-blue px-3 py-2 rounded-md">_experience</a>
+                <a href="#contact" class="block hover:text-neon-blue px-3 py-2 rounded-md">_contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- Hero Section -->
+        <section id="home"
+            class="relative min-h-screen flex items-center pt-20 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <!-- Background glow -->
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl animation-pulse-slow">
+            </div>
+            <div
+                class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-green/10 rounded-full blur-3xl animation-pulse-slow delay-1000">
+            </div>
+
+            <div class="max-w-7xl mx-auto w-full relative z-10">
+                <div class="max-w-3xl">
+                    <p class="font-mono text-neon-green mb-4">Hello World, I am</p>
+                    <h1 class="text-5xl sm:text-7xl font-bold text-white mb-6 tracking-tight">
+                        Lê Đức Anh
+                    </h1>
+
+                    <!-- Typing Animation Container -->
+                    <div class="h-12 sm:h-16 mb-6">
+                        <h2 class="text-2xl sm:text-4xl font-mono text-gray-400 flex items-center">
+                            > <span id="typewriter" class="ml-2 text-neon-blue"></span><span
+                                class="cursor animate-pulse">_</span>
+                        </h2>
+                    </div>
+
+                    <p class="text-lg text-gray-400 mb-10 max-w-2xl leading-relaxed">
+                        IT Student at Ho Chi Minh City University of Education.
+                        Passionate about automating infrastructure, containerization, and deploying machine learning
+                        models.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 font-mono mb-8">
+                        <a href="#projects"
+                            class="inline-flex items-center justify-center px-8 py-3 border border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-dark-900 transition-all duration-300 rounded-sm group">
+                            View Projects
+                            <i data-lucide="arrow-right"
+                                class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center px-8 py-3 bg-white text-dark-900 hover:bg-gray-200 transition-colors duration-300 rounded-sm">
+                            Contact Me
+                        </a>
+                    </div>
+
+                    <!-- THÊM LINK MẠNG XÃ HỘI Ở ĐÂY -->
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <!-- ĐIỀN LINK GITHUB CỦA BẠN VÀO THUỘC TÍNH href=" " BÊN DƯỚI -->
+                        <a href="https://github.com/Supzxjee" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center px-5 py-2 border border-dark-border rounded text-gray-300 hover:text-neon-blue hover:border-neon-blue transition-all duration-300 group bg-dark-800"
+                            title="Thêm link GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform">
+                                <path
+                                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 8 18v4">
+                                </path>
+                                <path d="M12 18v4"></path>
+                            </svg> GitHub
+                        </a>
+                        <!-- ĐIỀN LINK LINKEDIN CỦA BẠN VÀO THUỘC TÍNH href=" " BÊN DƯỚI -->
+                        <a href="https://www.linkedin.com/in/ducanh2503/" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center px-5 py-2 border border-dark-border rounded text-gray-300 hover:text-neon-green hover:border-neon-green transition-all duration-300 group bg-dark-800"
+                            title="Thêm link LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 relative bg-dark-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center mb-12">
+                    <h2 class="text-3xl font-bold text-white font-mono"><span
+                            class="text-neon-green mr-2">01.</span>Tech Stack</h2>
+                    <div class="h-px bg-dark-border flex-grow ml-6"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Infrastructure & Cloud -->
+                    <div
+                        class="glass-card p-6 rounded-lg border border-dark-border hover:border-neon-blue transition-colors duration-300 group">
+                        <div class="flex items-center mb-4 text-neon-blue">
+                            <i data-lucide="server" class="w-6 h-6 mr-3"></i>
+                            <h3 class="text-lg font-bold text-white">Infrastructure</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm font-mono text-gray-400">
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-green"></i> Linux (Ubuntu)
+                            </li>
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-green"></i> Docker</li>
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-green"></i> Kubernetes
+                            </li>
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-green"></i> CI/CD (GitHub
+                                Actions)</li>
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-green"></i> GCP</li>
+                        </ul>
+                    </div>
+
+                    <!-- Languages -->
+                    <div
+                        class="glass-card p-6 rounded-lg border border-dark-border hover:border-neon-green transition-colors duration-300 group">
+                        <div class="flex items-center mb-4 text-neon-green">
+                            <i data-lucide="code" class="w-6 h-6 mr-3"></i>
+                            <h3 class="text-lg font-bold text-white">Languages</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm font-mono text-gray-400">
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-blue"></i> Python</li>
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-blue"></i> Bash Script
+                            </li>
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-blue"></i> C#</li>
+                        </ul>
+                    </div>
+
+                    <!-- AI & Data -->
+                    <div
+                        class="glass-card p-6 rounded-lg border border-dark-border hover:border-neon-blue transition-colors duration-300 group">
+                        <div class="flex items-center mb-4 text-neon-blue">
+                            <i data-lucide="brain-circuit" class="w-6 h-6 mr-3"></i>
+                            <h3 class="text-lg font-bold text-white">AI & Data</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm font-mono text-gray-400">
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-green"></i> Machine
+                                Learning</li>
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-green"></i> CNN</li>
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-green"></i> PCA</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools -->
+                    <div
+                        class="glass-card p-6 rounded-lg border border-dark-border hover:border-neon-green transition-colors duration-300 group">
+                        <div class="flex items-center mb-4 text-neon-green">
+                            <i data-lucide="wrench" class="w-6 h-6 mr-3"></i>
+                            <h3 class="text-lg font-bold text-white">Tools</h3>
+                        </div>
+                        <ul class="space-y-3 text-sm font-mono text-gray-400">
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-blue"></i> Git</li>
+                            <li class="flex items-center group-hover:text-gray-300 transition-colors"><i
+                                    data-lucide="chevron-right" class="w-4 h-4 mr-2 text-neon-blue"></i> LaTeX</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center mb-16">
+                    <h2 class="text-3xl font-bold text-white font-mono"><span
+                            class="text-neon-blue mr-2">02.</span>Projects</h2>
+                    <div class="h-px bg-dark-border flex-grow ml-6"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div
+                        class="glass-card flex flex-col rounded-xl overflow-hidden border border-dark-border hover:border-neon-green transition-all duration-500 hover:-translate-y-2 group">
+                        <div
+                            class="h-48 bg-dark-800 relative overflow-hidden flex items-center justify-center border-b border-dark-border group-hover:border-neon-green transition-colors">
+                            <div
+                                class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxwYXRoIGQ9Ik0wIDBoNDB2NDBIMHoiIGZpbGw9Im5vbmUiLz4KPHBhdGggZD0iTTAgMGwxMCAxME00MCAwbC0xMCAxME0wIDQwbDEwLTEwTTQwIDQwbC0xMC0xMCIgc3Ryb2tlPSIjMzlmZjE0IiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNSIvPgo8L3N2Zz4=')]">
+                            </div>
+                            <i data-lucide="activity"
+                                class="w-16 h-16 text-neon-green group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white group-hover:text-neon-green transition-colors">
+                                    AI Observability Platform</h3>
+                                <a href="#" class="text-gray-400 hover:text-neon-blue transition-colors"><i
+                                        data-lucide="github" class="w-5 h-5"></i></a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 flex-grow">
+                                A containerized platform using FastAPI and Docker that ingests application logs and
+                                applies Machine Learning (PCA) to detect anomalous system behaviors.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-auto font-mono text-xs">
+                                <span
+                                    class="px-2 py-1 bg-dark-800 text-neon-blue rounded border border-dark-border">Python</span>
+                                <span
+                                    class="px-2 py-1 bg-dark-800 text-neon-blue rounded border border-dark-border">Docker</span>
+                                <span
+                                    class="px-2 py-1 bg-dark-800 text-neon-blue rounded border border-dark-border">FastAPI</span>
+                                <span
+                                    class="px-2 py-1 bg-dark-800 text-neon-blue rounded border border-dark-border">ML</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div
+                        class="glass-card flex flex-col rounded-xl overflow-hidden border border-dark-border hover:border-neon-blue transition-all duration-500 hover:-translate-y-2 group">
+                        <div
+                            class="h-48 bg-dark-800 relative overflow-hidden flex items-center justify-center border-b border-dark-border group-hover:border-neon-blue transition-colors">
+                            <div
+                                class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxwYXRoIGQ9Ik0wIDBoNDB2NDBIMHoiIGZpbGw9Im5vbmUiLz4KPHBhdGggZD0iTTIwIDB2NDBNMCAyMGg0MCIgc3Ryb2tlPSIjMDBmM2ZmIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNSIvPgo8L3N2Zz4=')]">
+                            </div>
+                            <i data-lucide="scan-face"
+                                class="w-16 h-16 text-neon-blue group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white group-hover:text-neon-blue transition-colors">
+                                    PCA-Guided CNN</h3>
+                                <a href="#" class="text-gray-400 hover:text-neon-green transition-colors"><i
+                                        data-lucide="github" class="w-5 h-5"></i></a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 flex-grow">
+                                A facial expression recognition system utilizing Principal Component Analysis (PCA) as a
+                                preprocessing step for Convolutional Neural Networks.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-auto font-mono text-xs">
+                                <span
+                                    class="px-2 py-1 bg-dark-800 text-neon-green rounded border border-dark-border">AI</span>
+                                <span
+                                    class="px-2 py-1 bg-dark-800 text-neon-green rounded border border-dark-border">Deep
+                                    Learning</span>
+                                <span
+                                    class="px-2 py-1 bg-dark-800 text-neon-green rounded border border-dark-border">Computer
+                                    Vision</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div
+                        class="glass-card flex flex-col rounded-xl overflow-hidden border border-dark-border hover:border-white transition-all duration-500 hover:-translate-y-2 group">
+                        <div
+                            class="h-48 bg-dark-800 relative overflow-hidden flex items-center justify-center border-b border-dark-border group-hover:border-white transition-colors">
+                            <div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity"
+                                style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 20px 20px;">
+                            </div>
+                            <i data-lucide="network"
+                                class="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white group-hover:text-white transition-colors">
+                                    Algorithm Visualizer</h3>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                                            data-lucide="github" class="w-5 h-5"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                                            data-lucide="external-link" class="w-5 h-5"></i></a>
+                                </div>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 flex-grow">
+                                An educational tool to visualize complex data structures and algorithms including Binary
+                                Trees, Linked Lists, and Bubble Sort.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-auto font-mono text-xs">
+                                <span class="px-2 py-1 bg-dark-800 text-gray-300 rounded border border-dark-border">Web
+                                    Dev</span>
+                                <span
+                                    class="px-2 py-1 bg-dark-800 text-gray-300 rounded border border-dark-border">Algorithms</span>
+                                <span class="px-2 py-1 bg-dark-800 text-gray-300 rounded border border-dark-border">Data
+                                    Structures</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Achievements Section -->
+        <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8 relative bg-dark-800">
+            <div class="max-w-3xl mx-auto">
+                <div class="flex items-center mb-16">
+                    <h2 class="text-3xl font-bold text-white font-mono"><span
+                            class="text-neon-green mr-2">03.</span>Experience & Achievements</h2>
+                    <div class="h-px bg-dark-border flex-grow ml-6"></div>
+                </div>
+
+                <div class="relative border-l-2 border-dark-border ml-3 md:ml-0">
+
+
+
+                    <!-- Item 2 -->
+                    <div class="mb-12 ml-8 relative group">
+                        <div
+                            class="absolute -left-10 mt-1.5 w-4 h-4 rounded-full bg-dark-900 border-2 border-neon-green group-hover:bg-neon-green transition-colors duration-300">
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Certifications</h3>
+                        </div>
+                        <ul class="space-y-4 mt-4">
+                            <li class="glass-card p-4 rounded border border-dark-border flex items-start">
+                                <i data-lucide="award" class="w-5 h-5 text-neon-green mr-3 mt-0.5 shrink-0"></i>
+                                <div>
+                                    <h4 class="text-white font-medium">Logging for DevOps</h4>
+                                    <p class="text-sm text-gray-400 font-mono">devopsedu.vn</p>
+                                </div>
+                            </li>
+                            <li class="glass-card p-4 rounded border border-dark-border flex items-start">
+                                <i data-lucide="award" class="w-5 h-5 text-neon-blue mr-3 mt-0.5 shrink-0"></i>
+                                <div>
+                                    <h4 class="text-white font-medium">DevOps for Fresher</h4>
+                                    <p class="text-sm text-gray-400 font-mono">devopsedu.vn</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 relative min-h-[80vh] flex flex-col justify-center">
+            <div class="max-w-2xl mx-auto w-full text-center">
+                <h2 class="text-3xl font-bold text-white font-mono mb-4"><span
+                        class="text-neon-blue mr-2">04.</span>What's Next?</h2>
+                <h3 class="text-5xl font-bold text-white mb-6">Get In Touch</h3>
+                <p class="text-gray-400 mb-12">
+                    I'm currently looking for new opportunities in DevOps, Cloud Infrastructure, and AI Engineering.
+                    Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                </p>
+
+                <!-- Contact Form (UI Only) -->
+                <form
+                    class="text-left glass-card p-8 rounded-xl border border-dark-border mb-12 shadow-2xl relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-blue via-neon-green to-neon-blue">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block text-sm font-mono text-gray-400 mb-2">Name</label>
+                            <input type="text" id="name"
+                                class="w-full bg-dark-900 border border-dark-border rounded px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-colors font-mono"
+                                placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-mono text-gray-400 mb-2">Email</label>
+                            <input type="email" id="email"
+                                class="w-full bg-dark-900 border border-dark-border rounded px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-colors font-mono"
+                                placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-mono text-gray-400 mb-2">Message</label>
+                        <textarea id="message" rows="4"
+                            class="w-full bg-dark-900 border border-dark-border rounded px-4 py-3 text-white focus:outline-none focus:border-neon-green focus:ring-1 focus:ring-neon-green transition-colors font-mono resize-none"
+                            placeholder="Hello! I'd like to discuss..."></textarea>
+                    </div>
+                    <button type="button"
+                        class="w-full font-mono bg-transparent border border-neon-green text-neon-green hover:bg-neon-green hover:text-dark-900 px-8 py-4 rounded transition-all duration-300 flex items-center justify-center group-button">
+                        Send Message
+                        <i data-lucide="send"
+                            class="ml-2 w-4 h-4 group-button-hover:translate-x-1 group-button-hover:-translate-y-1 transition-transform"></i>
+                    </button>
+                </form>
+
+                <div class="flex justify-center space-x-8 mt-4">
+                    <!-- ĐIỀN LINK GITHUB CỦA BẠN VÀO THUỘC TÍNH href=" " BÊN DƯỚI -->
+                    <a href="https://github.com/Supzxjee" target="_blank" rel="noopener noreferrer"
+                        class="text-gray-400 hover:text-neon-blue transition-colors flex flex-col items-center group">
+                        <div
+                            class="p-4 rounded-full border border-dark-border group-hover:border-neon-blue group-hover:bg-dark-800 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-6 h-6">
+                                <path
+                                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 8 18v4">
+                                </path>
+                                <path d="M12 18v4"></path>
+                            </svg>
+                        </div>
+                        <span
+                            class="font-mono text-xs mt-3 opacity-0 group-hover:opacity-100 transition-opacity">GitHub</span>
+                    </a>
+
+                    <!-- ĐIỀN LINK LINKEDIN CỦA BẠN VÀO THUỘC TÍNH href=" " BÊN DƯỚI -->
+                    <a href="https://www.linkedin.com/in/ducanh2503/" target="_blank" rel="noopener noreferrer"
+                        class="text-gray-400 hover:text-neon-green transition-colors flex flex-col items-center group">
+                        <div
+                            class="p-4 rounded-full border border-dark-border group-hover:border-neon-green group-hover:bg-dark-800 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-6 h-6">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </div>
+                        <span
+                            class="font-mono text-xs mt-3 opacity-0 group-hover:opacity-100 transition-opacity">LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center border-t border-dark-border">
+        <p class="font-mono text-sm text-gray-500 mb-2">
+            Designed & Built by Lê Đức Anh
+        </p>
+        <p class="font-mono text-xs text-gray-600">
+            Terminal aesthetic. Built with HTML, Tailwind CSS & Vanilla JS.
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./app.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

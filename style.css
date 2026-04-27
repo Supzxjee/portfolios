@@ -1,0 +1,65 @@
+/* style.css */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #39ff14; /* Neon green hover */
+}
+
+/* Glassmorphism Utilities */
+.glass-nav {
+    background: rgba(5, 5, 5, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-card {
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Typography/Cursor Animation */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: #39ff14;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Section visibility for scroll reveals */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure smooth scrolling across the page */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Offset for sticky navbar */
+}
